@@ -1,20 +1,29 @@
 <ion-header [translucent]="true">
-  <ion-toolbar>
+  <ion-toolbar color="primary">
     <ion-title>
-      Blank
+      Our Catalog
     </ion-title>
+    <ion-buttons slot="end">
+      <ion-button (click)="goToAdd()">
+        <ion-icon name="add-outline" slot="icon-only">
+        </ion-icon>
+      </ion-button>
+    </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>
+  <strong> We Propose these new courses : </strong>
+  <ion-list>
+    <ion-item *ngFor="let c of tab" [routerLink]="['detail', c.id]">
+      <ion-avatar class="ion-margin-horizontal">
+        <img [src]="c.image">
+      </ion-avatar>
+      {{ c.title }}
+    </ion-item>
 
-  <div id="container">
-    <strong>Ready to create an app?</strong>
-    <p>Start with Ionic <a target="_blank" rel="noopener noreferrer" href="https://ionicframework.com/docs/components">UI Components</a></p>
-  </div>
+  </ion-list>
+
+
+
 </ion-content>

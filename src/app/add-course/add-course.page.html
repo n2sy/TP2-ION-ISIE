@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar color="tertiary">
+    <ion-title>Add a new course</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+
+</ion-header>
+
+<ion-content>
+  <div class="ion-margin">
+    <form #f="ngForm" (ngSubmit)="onSubmit(f.value)">
+      <label for="title">Title</label>
+      <input ngModel type="text" class="form-control" name="title" id="title">
+      <label for="author">Author</label>
+      <input ngModel type="text" class="form-control" name="author" id="author">
+      <label for="image">Image</label>
+      <input ngModel type="text" class="form-control" name="image" id="image">
+      <label for="keywords">Keywords</label>
+      <input ngModel type="text" class="form-control" name="keywords" id="keywords">
+
+      <br><br>
+      <ion-button type="submit" expand="block">Add</ion-button>
+
+    </form>
+
+  </div>
+
+
+</ion-content>
